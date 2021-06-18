@@ -10,7 +10,7 @@ void* memset(void* m, unsigned char c, size_t n)
     unsigned char* p = m; // so any ptr type can be passed
     for (int i=0;i<=n;i++) { 
         *p = c;
-        m++;
+        p++;
     }
  
     return m;

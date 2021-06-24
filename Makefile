@@ -37,7 +37,7 @@ $(BIN_DIR)/%.s.o: %.s
 	$(TARGET_AS) $(TARGET_ASFLAGS) -o $@ $<
 
 $(TARGET_FILE): $(O_FILES)
-	$(TARGET_LD) -T link.ld -o $@ $(O_FILES)
+	$(TARGET_LD) -Map=$(TARGET_FILE).map -T link.ld -o $@ $(O_FILES)
 
 ritz: $(TARGET_FILE)
 

@@ -18,10 +18,8 @@ QEMU ?= qemu-system-x86_64
 TARGET_FILE := $(BIN_DIR)/$(TARGET_NAME)
 
 SRC_DIRS := src/boot src/graphics src/kernel src/rlibc src/shell
-C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
-S_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.s))
-O_FILES := $(foreach file,$(C_FILES),$(BIN_DIR)/$(file).o) \
-    $(foreach file,$(S_FILES),$(BIN_DIR)/$(file).o)
+SOURCE_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.[c,s]))
+O_FILES := $(foreach file,$(SOURCE_FILES),$(BIN_DIR)/$(file).o)
 
 $(BIN_DIR)/src/shell/kmode.c.o: TARGET_CFLAGS += -Wno-incompatible-pointer-types
 

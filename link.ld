@@ -1,6 +1,5 @@
 OUTPUT_FORMAT("binary")
-OUTPUT(ritz.bin)
-INPUT(boot.o)
+INPUT(BIN_DIR/src/boot/boot.s.o)
 SECTIONS
 {
    . = 0x7c00;

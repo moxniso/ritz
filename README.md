@@ -5,8 +5,10 @@ Requirements to build:
 * ld
 * nasm
 
-To test:
-``qemu-system-i386 -cpu pentium -fda ritz.bin``
+To build and test:
+``make``
+``make test``
+This utilizes qemu-system-i386 to test with 
 
 To flash to USB: 
 ``sudo dd if=ritz.bin of=/dev/sdb bs=4M conv=fdatasync``
@@ -17,4 +19,7 @@ TODO:
 from memory instead of having one big static binary
 * Write some documentation for the ABI
 
-Note: Ritz (working name btw) is a very WIP OS! There may be random crashes or failures to boot on some real hardware. Please do report any such occurences along with debug output (registers, stack data, etc)
+Note: Ritz (working name btw) is a very WIP OS! 
+There may be random crashes or failures to boot on real hardware. 
+Please do report any such occurences along with debug output (registers, stack frame,
+etc).

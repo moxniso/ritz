@@ -2,7 +2,7 @@
 
 BIN_DIR := bin
 
-TARGET_NAME := ritz.bin
+TARGET_NAME := ritz
 
 TARGET_CPP := cpp
 TARGET_AS := nasm -f elf32
@@ -15,7 +15,8 @@ QEMU ?= qemu-system-x86_64
 
 # targets
 
-TARGET_FILE := $(BIN_DIR)/$(TARGET_NAME)
+TARGET_FILE := $(BIN_DIR)/$(TARGET_NAME).bin
+TARGET_NOPREFIX := $(BIN_DIR)/$(TARGET_NAME)
 
 SRC_DIRS := src/boot src/graphics src/kernel src/rlibc src/shell
 SOURCE_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.[c,s]))
@@ -39,7 +40,7 @@ $(BIN_DIR)/link.ld: link.ld
 	$(TARGET_CPP) -P -DBIN_DIR=$(BIN_DIR) -o $@ $<
 
 $(TARGET_FILE): $(O_FILES) $(BIN_DIR)/link.ld
-	$(TARGET_LD) -Map=$(TARGET_FILE).map -T $(BIN_DIR)/link.ld -o $@ $(O_FILES)
+	$(TARGET_LD) -Map=$(TARGET_NOPREFIX).map -T $(BIN_DIR)/link.ld -o $@ $(O_FILES)
 
 ritz: $(TARGET_FILE)
 

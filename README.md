@@ -27,4 +27,4 @@ There may be random crashes or failures to boot on real hardware.
 Please do report any such occurences along with debug output (registers, stack frame,
 etc).
 
-``media/ritztan_13h.png`` drawn by Sebastian#9999
+``media/ritztan_13h.png`` drawn by Sebastian#6675

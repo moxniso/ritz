@@ -13,11 +13,12 @@ To build and test:
 
 This utilizes qemu-system-i386 to test with 
 
-To install on real hardware with GRUB, add this to your grub.conf:
+To install on GRUB, add this to your ``/boot/grub/grub.conf``:
 ```
-title Ritz32
+menuentry 'Ritz32' {
 	root (hd0,0)
-	kernel /path/to/ritz-001 ro
+	multiboot /path/to/ritz-001 ro
+}
 ``` 
 
 TODO:

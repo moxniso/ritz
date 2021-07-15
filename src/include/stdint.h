@@ -1,8 +1,3 @@
-// stdint.h
-// Integer types
-// part of the Ritz libc
-// 2020 moxniso
-
 #ifndef STDINT_H
 #define STDINT_H
 

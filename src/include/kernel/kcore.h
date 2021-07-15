@@ -27,4 +27,6 @@ void rk_kill();
 short rk_handlenewline(short* pos);
 void rk_newprompt(void);
 
+BOOL rk_gfxmode(BOOL set);
+
 #endif /* KCORE_H */

@@ -7,12 +7,14 @@
 #define kcredit "(c) 2021 moxniso"
 
 BOOL rstflag;
+extern char* ritztan;
 
 void rkmain()
 {
         init_idt();
         rk_disablepics();
 
+        rk_gfxmode(FALSE);
 	rk_clearvmem();
 	rk_hidecursor();
 	rkmode_init();
@@ -28,11 +30,9 @@ void rkmain()
 	for (int i = (VGA_WIDTH*2); i < ((VGA_WIDTH*2)*2) ;i++) 
 		rk_drawhash(i, 0x04);
 
-	rkmode_open(FALSE);
-	
+	rkmode_open(FALSE);	
 	rk_kill();
 }
-
 
 
 

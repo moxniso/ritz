@@ -1,8 +1,3 @@
-// string.c
-// String manipulation functions
-// part of Ritz libc
-// 2020 moxniso
-
 #include <common.h>
 #include <stddef.h> // TODO: Create own stddef.h instead of using GNU's 
 

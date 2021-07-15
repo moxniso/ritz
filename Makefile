@@ -9,13 +9,13 @@ TARGET_AS := nasm -f elf32
 TARGET_ASFLAGS := -i$(CURDIR)/src/include/
 TARGET_CC := gcc -m32
 TARGET_CFLAGS = -fno-PIC -nodefaultlibs -nostdlib -fno-builtin -Isrc/include
-TARGET_LD := ld -m elf_i386 -no-PIE
+TARGET_LD := ld -m elf_i386 #-no-PIE
 
 QEMU ?= qemu-system-x86_64
 
 # targets
 
-TARGET_FILE := $(BIN_DIR)/$(TARGET_NAME).bin
+TARGET_FILE := $(BIN_DIR)/$(TARGET_NAME)-001
 TARGET_NOPREFIX := $(BIN_DIR)/$(TARGET_NAME)
 
 SRC_DIRS := src/boot src/graphics src/kernel src/rlibc src/shell
@@ -48,7 +48,7 @@ clean:
 	$(RM) -r $(BIN_DIR)
 
 test: ritz
-	$(QEMU) -fda $(TARGET_FILE) -cpu pentium -soundhw pcspk
+	$(QEMU) -kernel $(TARGET_FILE) -cpu pentium -soundhw pcspk -machine type=pc-i440fx-3.1
 
 .PHONY: clean test
 .DEFAULT_GOAL := ritz

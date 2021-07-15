@@ -1,8 +1,3 @@
-// ctype.c
-// C type specific routines
-// part of the Ritz libc
-// 2020 moxniso
-
 #include <common.h>
 #include <string.h>
 #include <math.h>

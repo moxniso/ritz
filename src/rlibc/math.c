@@ -1,8 +1,3 @@
-// math.c
-// Mathematical procedures
-// part of the Ritz libc
-// 2021 moxniso
-
 int pow(int base, int power)
 {
     int initial_base = base;

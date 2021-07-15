@@ -6,7 +6,7 @@
 #include <kmode.h>
 
 // TODO: replace datestrs once i add a ritzsys abstraction
-// and fix the inline asm for linefeed and gtc.
+// and fix the inline asm for linefeed and gtc
 #include <graphics/display.h> // promptpos
 #include <kernel/kcore.h> // rk_datestrs and rk_handlenewline
 

@@ -1,8 +1,3 @@
-// position.c
-// Misc. helper funcs for cursor positioning
-// Part of rlibc
-// 2021 moxniso
-
 #include <graphics/display.h>
 
 /* Coordinate formula:

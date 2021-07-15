@@ -1,8 +1,3 @@
-// common.h
-// Common definitions used throughout the ritz API
-// part of the Ritz libc
-// 2020 moxniso
-
 #ifndef COMMON_H
 #define COMMON_H
 

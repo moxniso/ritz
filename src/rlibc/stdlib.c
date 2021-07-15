@@ -1,8 +1,3 @@
-// stdlib.h
-// General standard library functions
-// Part of rlibc
-// 2021 moxniso
-
 #include <stddef.h>
 
 void* memset(void* m, unsigned char c, size_t n)

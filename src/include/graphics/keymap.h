@@ -1,8 +1,7 @@
 #ifndef KEYMAP_H
 #define KEYMAP_H
 
-/* The following array is taken from 
-    http://www.osdever.net/bkerndev/Docs/keyboard.htm */
+// Credits: http://www.osdever.net/bkerndev/Docs/keyboard.htm
 
 const unsigned char keymap[128] =
 {

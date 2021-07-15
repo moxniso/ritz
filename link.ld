@@ -1,10 +1,10 @@
-OUTPUT_FORMAT("binary")
-INPUT(BIN_DIR/src/boot/boot.s.o)
+OUTPUT_FORMAT(elf32-i386)
+ENTRY(_start32)
 SECTIONS
 {
-   . = 0x7c00;
-   .text : { *(.boot) *(.text) }
-   .rodata : { *(.rodata) }
-   .data : { *(.data) }
-   .bss : { *(.bss) }
+   . = 0x100000;
+   .text : ALIGN(4) { *(.text) }
+   .rodata : ALIGN(4) { *(.rodata) }
+   .data : ALIGN(4) { *(.data) }
+   .bss : ALIGN(4) { *(.bss) }
 }
